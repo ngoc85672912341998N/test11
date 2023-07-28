@@ -34,7 +34,7 @@ async def read_item(request: Request):
     results = session.exec(statement).all()
     statement2 = select(update_data)
     results2 = session.exec(statement2).all()
-    return templates.TemplateResponse("1.html", {"request": request, "results": results,"results2":results2,"so_luong":so_luong,"tong_luot_thich":k})
+    return results2
 
 @app.get("/")
 async def root():
